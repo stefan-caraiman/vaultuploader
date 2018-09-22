@@ -10,11 +10,11 @@ except ImportError:
 setup(
     name="vaultuploader",
     version="0.0.1",
-    description="A demo proxy",
+    description="A certificate uploader for Vault written in Python",
     long_description=open("README.md").read(),
     author="Stefan Caraiman",
     url="https://github.com/stefan-caraiman/vaultuploader",
-    packages=["vaultuploader", "vaultuploader.client", "vaultuploader.common"],
+    packages=["vaultuploader"],
     scripts=["scripts/vaultuploader"],
     requires=open("requirements.txt").readlines(),
 )

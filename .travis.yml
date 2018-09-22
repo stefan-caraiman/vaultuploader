@@ -10,9 +10,9 @@ env:
     - REGISTRY_TAG="stefanccaraiman/vaultuploader:latest"
 
 after_success:
-- echo "$DOCKER_PASS" | docker login --username "$DOCKER_USER" --password-stdin
-- docker build --pull --force-rm -f Dockerfile -t $REGISTRY_TAG .
-- docker push $REGISTRY_TAG
+  - echo "$DOCKER_PASS" | docker login --username "stefanccaraiman" --password-stdin
+  - docker build --pull --force-rm -f Dockerfile -t $REGISTRY_TAG .
+  - docker push $REGISTRY_TAG
 
 install: pip install tox
 script:
