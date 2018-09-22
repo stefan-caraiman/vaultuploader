@@ -1,0 +1,20 @@
+sudo: required
+services:
+  - docker
+language: python
+python:
+  - "2.7"
+
+env:
+  global:
+    - REGISTRY_TAG="stefanccaraiman/vaultuploader:latest"
+
+after_success:
+- echo "$DOCKER_PASS" | docker login --username "$DOCKER_USER" --password-stdin
+- docker build --pull --force-rm -f Dockerfile -t $REGISTRY_TAG .
+- docker push $REGISTRY_TAG
+
+install: pip install tox
+script:
+  - echo "Running tests..."
+  - tox

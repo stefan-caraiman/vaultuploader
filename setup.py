@@ -1,0 +1,20 @@
+#! /usr/bin/env python
+"""vaultuploader install script."""
+
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+
+
+setup(
+    name="vaultuploader",
+    version="0.0.1",
+    description="A demo proxy",
+    long_description=open("README.md").read(),
+    author="Stefan Caraiman",
+    url="https://github.com/stefan-caraiman/vaultuploader",
+    packages=["vaultuploader", "vaultuploader.client", "vaultuploader.common"],
+    scripts=["scripts/vaultuploader"],
+    requires=open("requirements.txt").readlines(),
+)
