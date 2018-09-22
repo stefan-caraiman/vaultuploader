@@ -16,5 +16,4 @@ after_success:
 
 install: pip install tox
 script:
-  - echo "Running tests..."
-  - tox
+  - echo "Run tox"

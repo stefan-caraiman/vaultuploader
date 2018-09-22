@@ -1,4 +1,4 @@
-Flask==1.0.2
+Flask
 hvac
 six
 requests
